@@ -45,7 +45,7 @@ var showQuestion = function(question) {
 
 	// set some properties related to asker
 	var asker = result.find('.asker');
-	asker.html('<p>Name: <a target="_blank" href=http://stackoverflow.com/users/' + question.owner.user_id + ' >' +
+	asker.html('<p>Name: <a target="_blank" href=https://stackoverflow.com/users/' + question.owner.user_id + ' >' +
 													question.owner.display_name +
 												'</a>' +
 							'</p>' +
@@ -80,7 +80,7 @@ var getUnanswered = function(tags) {
 								sort: 'creation'};
 	
 	var result = $.ajax({
-		url: "http://api.stackexchange.com/2.2/questions/unanswered",
+		url: "https://api.stackexchange.com/2.2/questions/unanswered",
 		data: request,
 		dataType: "jsonp",
 		type: "GET",
@@ -103,7 +103,7 @@ var getUnanswered = function(tags) {
 
 //new function - gets results based on input tag
 function getResults(tag) {
-	var targeturl = 'http://api.stackexchange.com/2.2/tags/'+tag+'/top-answerers/all_time?site=stackoverflow'
+	var targeturl = 'https://api.stackexchange.com/2.2/tags/'+tag+'/top-answerers/all_time?site=stackoverflow'
   	$.getJSON(targeturl, function(data){
     showResults(tag, data.items);
 	});
